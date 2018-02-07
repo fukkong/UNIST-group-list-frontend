@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
-import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
-import TextField from 'material-ui/TextField';
-import RaisedButton from 'material-ui/RaisedButton';
-
+import React, { Component } from 'react'
+import { Card, CardActions, CardHeader, CardMedia, CardTitle, CardText } from 'material-ui/Card'
+import TextField from 'material-ui/TextField'
+import RaisedButton from 'material-ui/RaisedButton'
 
 const localStyle = {
   CardStyle: {
@@ -19,10 +18,10 @@ const localStyle = {
   loginTitle: {
     fontSize: '30px'
   }
-};
+}
 
 class LoginPage extends Component {
-  render() {
+  render () {
     return (
       <div className="login-page">
         <Card style={localStyle.CardStyle}>
@@ -35,13 +34,13 @@ class LoginPage extends Component {
             hintText="Password Field"
             floatingLabelText="Password"
             type="password"
-          /><br />
-          <RaisedButton label="Login" style={localStyle.buttonStyle} />
-          <RaisedButton label="Register" primary={true} style={localStyle.buttonStyle} />
+          /><br/>
+          <RaisedButton label="Login" style={localStyle.buttonStyle}/>
+          <RaisedButton label="Register" primary={true} style={localStyle.buttonStyle}/>
         </Card>
       </div>
-    );
+    )
   }
 }
 
-export default LoginPage;
+export default LoginPage

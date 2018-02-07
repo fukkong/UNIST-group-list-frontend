@@ -1,8 +1,8 @@
-import React from 'react';
-import {GridList, GridTile} from 'material-ui/GridList';
-import IconButton from 'material-ui/IconButton';
-import Subheader from 'material-ui/Subheader';
-import StarBorder from 'material-ui/svg-icons/toggle/star-border';
+import React from 'react'
+import { GridList, GridTile } from 'material-ui/GridList'
+import IconButton from 'material-ui/IconButton'
+import Subheader from 'material-ui/Subheader'
+import StarBorder from 'material-ui/svg-icons/toggle/star-border'
 
 const styles = {
   root: {
@@ -16,8 +16,7 @@ const styles = {
     overflowY: 'auto',
     margin: '0 auto'
   },
-};
-
+}
 
 const tilesData = [
   {
@@ -60,32 +59,33 @@ const tilesData = [
     title: 'Water plant',
     author: 'BkrmadtyaKarki',
   },
-];
-class ClubList extends React.Component{
-    render() {
-        return (
-            <div>
-              이곳에 소모임 리스트를 카드 형식으로 표시
-              <GridList
-                cellHeight={250}
-                style={styles.gridList}
-              >
-                <Subheader>소모임 리스트</Subheader>
-                {tilesData.map((tile) => (
-                  <GridTile
-                    key={tile.img}
-                    title={tile.title}
-                    subtitle={<span>by <b>{tile.author}</b></span>}
-                    cols={0.666}
-                    actionIcon={<IconButton><StarBorder color="white" /></IconButton>}
-                  >
-                    <img src={tile.img} />
-                  </GridTile>
-                ))}
-              </GridList>
-            </div>
-        );
-    }
-};
+]
 
-export default ClubList;
+class ClubList extends React.Component {
+  render () {
+    return (
+      <div>
+        이곳에 소모임 리스트를 카드 형식으로 표시
+        <GridList
+          cellHeight={250}
+          style={styles.gridList}
+        >
+          <Subheader>소모임 리스트</Subheader>
+          {tilesData.map((tile) => (
+            <GridTile
+              key={tile.img}
+              title={tile.title}
+              subtitle={<span>by <b>{tile.author}</b></span>}
+              cols={0.666}
+              actionIcon={<IconButton><StarBorder color="white"/></IconButton>}
+            >
+              <img src={tile.img}/>
+            </GridTile>
+          ))}
+        </GridList>
+      </div>
+    )
+  }
+}
+
+export default ClubList

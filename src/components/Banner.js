@@ -1,6 +1,6 @@
-import React from 'react';
-import AppBar from 'material-ui/AppBar';
-import FlatButton from 'material-ui/FlatButton';
+import React from 'react'
+import AppBar from 'material-ui/AppBar'
+import FlatButton from 'material-ui/FlatButton'
 
 const localStyle = {
   bannerBar: {
@@ -15,27 +15,27 @@ const localStyle = {
     //float: 'right',
     align: 'center'
   }
-};
-class Banner extends React.Component{
-  loginClick() {
+}
 
+class Banner extends React.Component {
+  loginClick () {
 
   }
 
-  render() {
+  render () {
     return (
       <div style={localStyle.bannerBar}>
         <div style={localStyle.bannerFont}>
           Unimo
           <FlatButton
-              label="Login"
-              style={localStyle.loginButton}
-              onclick={this.loginClick()}
+            label="Login"
+            style={localStyle.loginButton}
+            onclick={this.loginClick()}
           />
         </div>
       </div>
-    );
+    )
   }
-};
+}
 
-export default Banner;
+export default Banner
