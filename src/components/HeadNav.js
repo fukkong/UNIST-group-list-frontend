@@ -3,10 +3,10 @@ import AppBar from 'material-ui/AppBar'
 import FlatButton from 'material-ui/FlatButton'
 
 const localStyle = {
-  bannerBar: {
+  navigationBar: {
     backgroundColor: '#FFFFFF',
   },
-  bannerFont: {
+  navigationFont: {
     fontSize: '20',
     color: '#039BE5',
     margin: '10'
@@ -17,15 +17,15 @@ const localStyle = {
   }
 }
 
-class Banner extends React.Component {
+class HeadNav extends React.Component {
   loginClick () {
 
   }
 
   render () {
     return (
-      <div style={localStyle.bannerBar}>
-        <div style={localStyle.bannerFont}>
+      <div style={localStyle.navigationBar}>
+        <div style={localStyle.navigationFont}>
           Unimo
           <FlatButton
             label="Login"
@@ -38,4 +38,4 @@ class Banner extends React.Component {
   }
 }
 
-export default Banner
+export default HeadNav

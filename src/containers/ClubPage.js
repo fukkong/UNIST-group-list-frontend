@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import logo from '../logo.svg'
-import Banner from '../components/Banner'
+import HeadNav from '../components/HeadNav'
 import HomeHeader from '../components/HomeHeader'
 import ClubList from '../components/ClubList'
 import './Home.css'
