@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 const localStyle = {
   mainHeader: {
@@ -8,17 +8,17 @@ const localStyle = {
     color: '#FFFFFF'
   }
 
-};
+}
 
-class HomeHeader extends React.Component{
-    render() {
-        return (
-            <div style={localStyle.mainHeader}>
-              <p>유니스트 소모임</p>
-              <p>유니스트 소모임을 위한 페이지입니다.</p>
-            </div>
-        );
-    }
-};
+class HomeHeader extends React.Component {
+  render () {
+    return (
+      <div style={localStyle.mainHeader}>
+        <p>유니스트 소모임</p>
+        <p>유니스트 소모임을 위한 페이지입니다.</p>
+      </div>
+    )
+  }
+}
 
-export default HomeHeader;
+export default HomeHeader
