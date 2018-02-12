@@ -1,6 +1,7 @@
 import React from 'react'
 import AppBar from 'material-ui/AppBar'
 import FlatButton from 'material-ui/FlatButton'
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 const localStyle = {
   navigationBar: {
@@ -27,11 +28,12 @@ class HeadNav extends React.Component {
       <div style={localStyle.navigationBar}>
         <div style={localStyle.navigationFont}>
           Unimo
-          <FlatButton
-            label="Login"
-            style={localStyle.loginButton}
-            onclick={this.loginClick()}
-          />
+          <Link to="/login">
+            <FlatButton
+              label="Login"
+              style={localStyle.loginButton}
+            />
+          </Link>
         </div>
       </div>
     )
