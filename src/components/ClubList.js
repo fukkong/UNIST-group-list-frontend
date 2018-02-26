@@ -3,6 +3,7 @@ import { GridList, GridTile } from 'material-ui/GridList'
 import IconButton from 'material-ui/IconButton'
 import Subheader from 'material-ui/Subheader'
 import StarBorder from 'material-ui/svg-icons/toggle/star-border'
+import { api } from '../api'
 
 const styles = {
   root: {
@@ -16,6 +17,14 @@ const styles = {
     overflowY: 'auto',
     margin: '0 auto'
   },
+}
+
+function getClubList (context) {
+  const a = []
+  const getClubList = api.get('/club/list')
+    .then((response) => response.data)
+    .then((data) => context.setState({clubList: data}))
+    .then(() => console.log(context.state.clubList))
 }
 
 const tilesData = [
@@ -62,26 +71,35 @@ const tilesData = [
 ]
 
 class ClubList extends React.Component {
+  constructor (props) {
+    super(props)
+    this.state = {clubList: []}
+    getClubList(this)
+
+  }
+
   render () {
     return (
       <div>
-        /*what is somoim?*/
         <GridList
           cellHeight={250}
           style={styles.gridList}
         >
-          <Subheader>소모임 리스트</Subheader>
-          {tilesData.map((tile) => (
-            <GridTile
-              key={tile.img}
-              title={tile.title}
-              subtitle={<span>by <b>{tile.author}</b></span>}
-              cols={0.666}
-              actionIcon={<IconButton><StarBorder color="white"/></IconButton>}
-            >
-              <img src={tile.img}/>
-            </GridTile>
-          ))}
+          <Subheader>이건 나오나</Subheader>
+          {this.state.clubList.map((club, i) => {
+            console.log('what the fuck is in club list? ' + JSON.stringify(this.state.clubList[0]))
+            return (
+              <GridTile
+                key={i}
+                title={club['name']}
+                subtitle={club['introduce_one_line']}
+                cols={0.666}
+                actionIcon={<IconButton><StarBorder color="white"/></IconButton>}
+              >
+                <img src={tilesData[i].img}/>
+              </GridTile>
+            )
+          })}
         </GridList>
       </div>
     )
