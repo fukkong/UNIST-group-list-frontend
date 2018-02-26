@@ -36,40 +36,12 @@ class HeadNav extends React.Component {
         titleStyle={localStyle.title}
         showMenuIconButton={false}
       >
-        <div style={{flex: 1, textAlign: 'left', height: '100%'}}>
-          <Link to='/clubs'>
-            <FlatButton
-              label="소모임 리스트"
-              style={localStyle.loginButton}
-            />
-          </Link>
-          <Link to='/new-club'>
-            <FlatButton
-              label="소모임 생성"
-              style={localStyle.loginButton}
-            />
-          </Link>
-        </div>
         <div style={{flex: 1, textAlign: 'center', height: '100%'}}>
           <FlatButton
             label="소모임.공간"
             labelStyle={{fontWeight: 'bold', fontSize: '3rem'}}
             style={localStyle.logoStyle}
           />
-        </div>
-        <div style={{flex: 1, textAlign: 'right', height: '100%'}}>
-          <Link to='/my-club'>
-            <FlatButton
-              label="나의 소모임"
-              style={localStyle.loginButton}
-            />
-          </Link>
-          <Link to='/login'>
-            <FlatButton
-              label="로그인"
-              style={localStyle.loginButton}
-            />
-          </Link>
         </div>
       </AppBar>
     )

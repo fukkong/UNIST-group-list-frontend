@@ -65,7 +65,7 @@ class ClubList extends React.Component {
   render () {
     return (
       <div>
-        이곳에 소모임 리스트를 카드 형식으로 표시
+        /*what is somoim?*/
         <GridList
           cellHeight={250}
           style={styles.gridList}
