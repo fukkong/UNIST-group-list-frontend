@@ -37,11 +37,13 @@ class HeadNav extends React.Component {
         showMenuIconButton={false}
       >
         <div style={{flex: 1, textAlign: 'center', height: '100%'}}>
-          <FlatButton
-            label="소모임.공간"
-            labelStyle={{fontWeight: 'bold', fontSize: '3rem'}}
-            style={localStyle.logoStyle}
-          />
+          <Link to={'/'}>
+            <FlatButton
+              label="소모임.공간"
+              labelStyle={{fontWeight: 'bold', fontSize: '3rem'}}
+              style={localStyle.logoStyle}
+            />
+          </Link>
         </div>
       </AppBar>
     )

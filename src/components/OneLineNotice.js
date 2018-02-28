@@ -22,7 +22,7 @@ function handleClick () {
 
 export function getNotice (context) {
   const a = []
-  const notice = api.get('/notice')
+  api.get('/notice')
     .then((response) => response.data[0].title)
     .then(i => a.push(i))
     .then(() => context.setState({noticeTitle: a[0]})
