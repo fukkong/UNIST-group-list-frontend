@@ -13,10 +13,6 @@ class Home extends Component {
         <HeadNav/>
         <HomeHeader/>
         <OneLineNotice/>
-        <p className="App-intro">
-          i213
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
         <ClubList/>
       </div>
     )

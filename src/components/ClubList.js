@@ -1,8 +1,8 @@
 import React from 'react'
 import { GridList, GridTile } from 'material-ui/GridList'
-import IconButton from 'material-ui/IconButton'
 import Subheader from 'material-ui/Subheader'
-import StarBorder from 'material-ui/svg-icons/toggle/star-border'
+import { api } from '../api'
+import { Link } from 'react-router-dom'
 
 const styles = {
   root: {
@@ -16,6 +16,16 @@ const styles = {
     overflowY: 'auto',
     margin: '0 auto'
   },
+  gridText: {
+    float: 'left',
+    clear: 'both'
+  },
+}
+
+function getClubList (context) {
+  api.get('/club/list', {page: 1, size: 8})
+    .then((response) => response.data)
+    .then((data) => context.setState({clubList: data}))
 }
 
 const tilesData = [
@@ -62,26 +72,37 @@ const tilesData = [
 ]
 
 class ClubList extends React.Component {
+  constructor (props) {
+    super(props)
+    this.state = {clubList: []}
+    getClubList(this)
+
+  }
+
   render () {
     return (
       <div>
-        이곳에 소모임 리스트를 카드 형식으로 표시
         <GridList
           cellHeight={250}
           style={styles.gridList}
         >
           <Subheader>소모임 리스트</Subheader>
-          {tilesData.map((tile) => (
-            <GridTile
-              key={tile.img}
-              title={tile.title}
-              subtitle={<span>by <b>{tile.author}</b></span>}
-              cols={0.666}
-              actionIcon={<IconButton><StarBorder color="white"/></IconButton>}
-            >
-              <img src={tile.img}/>
-            </GridTile>
-          ))}
+          {this.state.clubList.map((club, i) => {
+            return (
+              <Link to={'/club/' + (i + 1)} cols={0.66}>
+                <GridTile
+                  style={styles.gridTile}
+                  titleStyle={styles.gridText}
+                  subtitleStyle={styles.gridText}
+                  key={i}
+                  title={club['name']}
+                  subtitle={club['introduce_one_line']}
+                >
+                  <img src={tilesData[i].img}/>
+                </GridTile>
+              </Link>
+            )
+          })}
         </GridList>
       </div>
     )
