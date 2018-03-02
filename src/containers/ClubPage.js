@@ -7,7 +7,7 @@ import './Home.css'
 function getClubData (context) {
   api.get('/club/' + context.state.clubId)
     .then((response) => response.data)
-    .then((data) => context.setState({clubData : data}))
+    .then((data) => context.setState({clubData: data}))
 }
 
 class ClubPage extends Component {
